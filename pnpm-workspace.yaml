@@ -1,0 +1,12 @@
+packages:
+  - "packages/*"
+
+# Allow these dependencies to run their install scripts (native binaries the
+# Medusa/Nx build toolchain needs). pnpm 10 blocks postinstall scripts by default.
+onlyBuiltDependencies:
+  - "@medusajs/telemetry"
+  - "@swc/core"
+  - esbuild
+  - msgpackr-extract
+  - nx
+  - protobufjs

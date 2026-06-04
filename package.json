@@ -2,10 +2,20 @@
   "name": "@medusa-plugins/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "build": "nx run-many -t build",
+    "lint": "nx run-many -t lint",
+    "test": "nx run-many -t test",
+    "typecheck": "nx run-many -t typecheck",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
   "dependencies": {},
   "devDependencies": {
+    "@changesets/cli": "^2.29.0",
     "@nx/js": "22.7.5",
     "@swc-node/register": "~1.11.1",
     "@swc/core": "~1.15.5",
@@ -14,8 +24,5 @@
     "prettier": "~3.6.2",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  }
 }

@@ -42,3 +42,6 @@ Thumbs.db
 .nx/workspace-data
 .claude/worktrees
 .claude/settings.local.json
+
+# Medusa plugin build output
+.medusa

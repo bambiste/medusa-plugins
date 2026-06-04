@@ -1,0 +1,54 @@
+{
+  "name": "@bambiste/medusa-social-commerce",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bambiste/medusa-plugins.git",
+    "directory": "packages/medusa-social-commerce"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "description": "TikTok Social Commerce + Live Selling module for Medusa v2",
+  "files": [
+    ".medusa/server"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./workflows": "./.medusa/server/src/workflows/index.js",
+    "./.medusa/server/src/modules/*": "./.medusa/server/src/modules/*",
+    "./.medusa/server/src/modules/social-commerce": "./.medusa/server/src/modules/social-commerce/index.js",
+    "./modules/*": "./.medusa/server/src/modules/*",
+    "./providers/*": "./.medusa/server/src/providers/*",
+    "./*": "./.medusa/server/src/*.js",
+    ".": "./.medusa/server/src/index.js",
+    "./admin": {
+      "import": "./.medusa/server/src/admin/index.mjs",
+      "require": "./.medusa/server/src/admin/index.js",
+      "default": "./.medusa/server/src/admin/index.js"
+    }
+  },
+  "scripts": {
+    "build": "medusa plugin:build",
+    "dev": "medusa plugin:develop",
+    "prepublishOnly": "medusa plugin:build"
+  },
+  "dependencies": {
+    "ioredis": "^5.3.2"
+  },
+  "devDependencies": {
+    "@medusajs/admin-sdk": "2.14.2",
+    "@medusajs/cli": "2.14.2",
+    "@medusajs/framework": "2.14.2",
+    "@medusajs/medusa": "2.14.2",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@medusajs/admin-sdk": "2.14.2",
+    "@medusajs/cli": "2.14.2",
+    "@medusajs/framework": "2.14.2",
+    "@medusajs/medusa": "2.14.2"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "@bambiste/medusa-stories",
+  "version": "0.0.1",
+  "description": "Story / social feed plugin for Medusa v2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bambiste/medusa-plugins.git",
+    "directory": "packages/medusa-stories"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "files": [
+    ".medusa/server"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    "./.medusa/server/src/modules/*": "./.medusa/server/src/modules/*",
+    "./.medusa/server/src/modules/story": "./.medusa/server/src/modules/story/index.js",
+    "./modules/*": "./.medusa/server/src/modules/*",
+    "./*": "./.medusa/server/src/*.js",
+    ".": "./.medusa/server/src/index.js",
+    "./admin": {
+      "import": "./.medusa/server/src/admin/index.mjs",
+      "require": "./.medusa/server/src/admin/index.js",
+      "default": "./.medusa/server/src/admin/index.js"
+    }
+  },
+  "keywords": [
+    "medusa",
+    "plugin",
+    "medusa-plugin",
+    "medusa-v2"
+  ],
+  "scripts": {
+    "build": "medusa plugin:build",
+    "dev": "medusa plugin:develop",
+    "prepublishOnly": "medusa plugin:build"
+  },
+  "devDependencies": {
+    "@medusajs/admin-sdk": "2.14.2",
+    "@medusajs/cli": "2.14.2",
+    "@medusajs/framework": "2.14.2",
+    "@medusajs/medusa": "2.14.2",
+    "@medusajs/test-utils": "2.14.2",
+    "@swc/core": "^1.7.28",
+    "@types/node": "^20.0.0",
+    "prop-types": "^15.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2",
+    "vite": "^5.2.11",
+    "yalc": "1.0.0-pre.53"
+  },
+  "peerDependencies": {
+    "@medusajs/admin-sdk": "2.14.2",
+    "@medusajs/cli": "2.14.2",
+    "@medusajs/framework": "2.14.2",
+    "@medusajs/medusa": "2.14.2",
+    "@medusajs/test-utils": "2.14.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.10.0"
+}
