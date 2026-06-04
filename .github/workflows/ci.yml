@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   ci:
-    name: Build & typecheck affected
+    name: Build affected
     runs-on: ubuntu-latest
 
     steps:
@@ -37,10 +37,9 @@ jobs:
 
       - uses: nrwl/nx-set-shas@v4
 
+      # Medusa plugins are validated by `medusa plugin:build`; the tsc-based
+      # typecheck target doesn't apply to Medusa's tsconfig template.
       - name: Build affected
         run: pnpm nx affected -t build --parallel=3
         env:
           NODE_ENV: production
-
-      - name: Typecheck affected
-        run: pnpm nx affected -t typecheck --parallel=3
