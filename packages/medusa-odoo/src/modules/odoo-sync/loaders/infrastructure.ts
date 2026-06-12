@@ -77,6 +77,12 @@ export default async function infrastructureLoader(
   container.register('barcodeCacheQueue', { resolve: () => queues['barcode-cache'] })
   container.register('erpQueues',         { resolve: () => queues })
 
+  // The workers below run with this module-local container, where the main service
+  // is registered under its camelCased class name (`odooSyncService`) — the module
+  // key (`odooSync`) only exists in the global container. Alias it so the workers'
+  // `container.resolve(ODOO_SYNC_MODULE)` resolves.
+  container.register('odooSync', { resolve: () => container.resolve('odooSyncService') })
+
   // ── Workers ─────────────────────────────────────────────────────────────────
   // DISABLE_ERP_WORKERS=true → skip (used in Docker web container)
   // WORKER_MODE=erp|pos|barcode → start only that subset
