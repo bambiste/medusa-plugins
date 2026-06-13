@@ -1,6 +1,6 @@
 {
   "name": "@bambiste/medusa-barcode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Production-ready barcode scanning, multi-provider lookup and automatic product creation plugin for MedusaJS v2",
   "author": "Adafri",
   "license": "MIT",
