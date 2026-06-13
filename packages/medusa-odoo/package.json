@@ -1,6 +1,6 @@
 {
   "name": "@bambiste/medusa-odoo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Production-grade bidirectional Odoo ERP ↔ MedusaJS v2 integration plugin.",
   "author": "Adafri",
   "license": "MIT",

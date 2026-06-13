@@ -1,6 +1,6 @@
 {
   "name": "@bambiste/medusa-stories",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Story / social feed plugin for Medusa v2",
   "license": "MIT",
   "repository": {
