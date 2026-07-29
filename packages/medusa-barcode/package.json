@@ -2,7 +2,7 @@
   "name": "@bambiste/medusa-barcode",
   "version": "0.0.2",
   "description": "Production-ready barcode scanning, multi-provider lookup and automatic product creation plugin for MedusaJS v2",
-  "author": "Adafri",
+  "author": "Ibrahima Tour\u00e9",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
     "directory": "packages/medusa-barcode"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "files": [
