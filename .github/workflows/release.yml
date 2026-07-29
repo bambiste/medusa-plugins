@@ -47,6 +47,8 @@ jobs:
           publish: pnpm run release
           title: 'chore: version packages'
           commit: 'chore: version packages'
+          # Tags already have GitHub Releases from the prior run — don't recreate them.
+          createGithubReleases: false
         env:
           # Built-in token — pushes tags / opens the version PR on this repo. Needs
           # Settings → Actions → General → "Allow GitHub Actions to create and
