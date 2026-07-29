@@ -2,7 +2,7 @@ name: Release
 
 # Runs on every push to main.
 # - Pending changesets present  → opens/updates a "Version Packages" PR
-# - "Version Packages" PR merged → builds & publishes to GitHub Packages
+# - "Version Packages" PR merged → builds & publishes to public npm
 on:
   push:
     branches: [main]
@@ -11,7 +11,6 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions:
   contents: write
-  packages: write
   pull-requests: write
 
 jobs:
@@ -23,9 +22,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # PAT so the changeset-release branch is pushed as a real user, which
-          # lets the version PR be created even when the org blocks Actions from it.
-          token: ${{ secrets.PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
 
       - uses: pnpm/action-setup@v4
 
@@ -36,10 +32,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
           scope: '@bambiste'
 
+      # All deps (@medusajs, and the plugins themselves) are on public npm — no token.
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
 
       # changesets/action does one of two things:
       #   1. Pending changesets present → opens/updates a "Version Packages" PR
@@ -53,6 +48,9 @@ jobs:
           title: 'chore: version packages'
           commit: 'chore: version packages'
         env:
-          GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN || secrets.GITHUB_TOKEN }}
+          # Built-in token — pushes tags / opens the version PR on this repo. Needs
+          # Settings → Actions → General → "Allow GitHub Actions to create and
+          # approve pull requests" enabled for the version-PR path.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # npm publish auth — NPM_TOKEN must have publish rights to the @bambiste org on npm.
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
