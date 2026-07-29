@@ -54,3 +54,32 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # npm publish auth — NPM_TOKEN must have publish rights to the @bambiste org on npm.
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Self-healing dist-tag guard: make sure the intended tag always points at the
+      # version currently in the workspace, so `npm i @bambiste/x` (which resolves
+      # `latest`) — or `@next`/`@alpha` in prerelease mode — reaches the newest build.
+      # Reconciles from workspace-vs-npm independently of the changesets output.
+      - name: Reconcile dist-tags
+        if: ${{ !cancelled() }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -e
+          # In changesets prerelease mode → the pre tag (next/alpha); otherwise latest.
+          TAG=latest
+          [ -f .changeset/pre.json ] && TAG=$(node -p "require('./.changeset/pre.json').tag")
+          echo "Target dist-tag: $TAG"
+          for pj in packages/*/package.json; do
+            name=$(node -p "require('./$pj').name")
+            ver=$(node -p "require('./$pj').version")
+            priv=$(node -p "require('./$pj').private || false")
+            [ "$priv" = "true" ] && continue
+            # only (re)tag a version that is actually published on npm
+            npm view "$name@$ver" version >/dev/null 2>&1 || { echo "  skip $name@$ver (not on npm)"; continue; }
+            cur=$(npm dist-tag ls "$name" 2>/dev/null | awk -v t="$TAG:" '$1==t{print $2}')
+            if [ "$cur" = "$ver" ]; then
+              echo "  $name: $TAG already $ver"
+            else
+              npm dist-tag add "$name@$ver" "$TAG" && echo "  $name: $TAG → $ver (was ${cur:-none})"
+            fi
+          done
