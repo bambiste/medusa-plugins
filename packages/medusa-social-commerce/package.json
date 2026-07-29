@@ -7,7 +7,7 @@
     "directory": "packages/medusa-social-commerce"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+    "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "description": "TikTok Social Commerce + Live Selling module for Medusa v2",
