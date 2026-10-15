@@ -6,41 +6,38 @@
 
 # @bambiste/medusa-barcode
 
-**Production-ready barcode scanning, multi-provider lookup and automatic product creation for MedusaJS v2.**
+**Barcode scanning, multi-provider lookup and automatic product creation for MedusaJS v2.**
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)
 ![Medusa](https://img.shields.io/badge/Medusa-v2-7c3aed)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
-![Registry](https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github)
+![Registry](https://img.shields.io/badge/registry-npm-cb3837?logo=npm)
 
 ---
 
 ## Features
 
-| Feature | Status |
-|---|---|
-| EAN-13 / UPC-A / UPC-E / Code128 / QR support | ✅ |
-| GS1 checksum validation | ✅ |
-| PostgreSQL cache (configurable TTL) | ✅ |
-| Multi-provider fallback chain | ✅ |
-| OpenFoodFacts provider | ✅ |
-| UpcItemDb provider (trial + paid) | ✅ |
-| Extensible provider registry | ✅ |
-| Automatic Medusa product creation | ✅ |
-| Default variant with EAN / UPC / barcode fields | ✅ |
-| Workflow-based orchestration (transaction-safe) | ✅ |
-| Batch import (up to 200 barcodes) | ✅ |
-| Admin REST API | ✅ |
-| Zod request validation | ✅ |
-| Startup cache purge | ✅ |
+- EAN-13 / UPC-A / UPC-E / Code128 / QR support
+- GS1 checksum validation
+- PostgreSQL cache (configurable TTL)
+- Multi-provider fallback chain
+- OpenFoodFacts provider
+- UpcItemDb provider (trial + paid)
+- Extensible provider registry
+- Automatic Medusa product creation
+- Default variant with EAN / UPC / barcode fields
+- Workflow-based orchestration (transaction-safe)
+- Batch import (up to 200 barcodes)
+- Admin REST API
+- Zod request validation
+- Startup cache purge
 
 ---
 
 ## Installation
 
 ```bash
-# From the leuzman-backend workspace
-pnpm add medusa-barcode
+pnpm add @bambiste/medusa-barcode
 ```
 
 ---
@@ -206,8 +203,8 @@ Purge all expired cache entries: `{ "purged": N }`.
 Extend `BaseBarcodeProvider` and register it at startup:
 
 ```typescript
-import { BaseBarcodeProvider } from "medusa-barcode"
-import type { NormalizedProduct } from "medusa-barcode"
+import { BaseBarcodeProvider } from "@bambiste/medusa-barcode"
+import type { NormalizedProduct } from "@bambiste/medusa-barcode"
 
 class MyCustomProvider extends BaseBarcodeProvider {
   constructor() {
@@ -237,7 +234,7 @@ Then in a loader:
 
 ```typescript
 // src/loaders/register-providers.ts
-import { BARCODE_MODULE }   from "medusa-barcode"
+import { BARCODE_MODULE }   from "@bambiste/medusa-barcode"
 import { MyCustomProvider } from "./my-custom-provider"
 
 export default async function({ container }) {

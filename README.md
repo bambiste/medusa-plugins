@@ -6,12 +6,12 @@
 
 # Medusa Plugins
 
-**A monorepo of plugins for [MedusaJS v2](https://medusajs.com), published to GitHub Packages under the `@bambiste` scope.**
+**A monorepo of plugins for [MedusaJS v2](https://medusajs.com), published to npm under the `@bambiste` scope.**
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)
 ![Medusa](https://img.shields.io/badge/Medusa-v2-7c3aed)
 ![Monorepo](https://img.shields.io/badge/monorepo-Nx%20%2B%20pnpm-blue)
-![Registry](https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github)
+![Registry](https://img.shields.io/badge/registry-npm-cb3837?logo=npm)
 
 ---
 
@@ -20,7 +20,7 @@
 | Package | Description |
 |---|---|
 | [`@bambiste/medusa-barcode`](./packages/medusa-barcode) | Barcode scanning, multi-provider lookup and automatic product creation |
-| [`@bambiste/medusa-odoo`](./packages/medusa-odoo) | Bidirectional Odoo ERP ↔ Medusa integration |
+| [`@bambiste/medusa-odoo`](./packages/medusa-odoo) | Bidirectional Odoo ERP and Medusa integration |
 | [`@bambiste/medusa-product-ext`](./packages/medusa-product-ext) | Product extensions, extra fields and media (videos) |
 | [`@bambiste/medusa-qr`](./packages/medusa-qr) | QR code generation |
 | [`@bambiste/medusa-social-commerce`](./packages/medusa-social-commerce) | TikTok social commerce + live selling |
@@ -29,13 +29,7 @@
 
 ## Installing a plugin
 
-Packages publish to **GitHub Packages**. Add to your project's `.npmrc`:
-
-```
-@bambiste:registry=https://npm.pkg.github.com/
-```
-
-Then install and register the plugin in `medusa-config.ts`:
+Install and register the plugin in `medusa-config.ts`:
 
 ```bash
 pnpm add @bambiste/medusa-qr
@@ -62,7 +56,7 @@ Releases use [Changesets](https://github.com/changesets/changesets) with a PR-ba
 ```bash
 pnpm changeset        # record what changed (select the affected plugins)
 git push              # CI opens a "Version Packages" PR
-# merge that PR → CI builds and publishes to GitHub Packages
+# merge that PR → CI builds and publishes to npm
 ```
 
 ## License

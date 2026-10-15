@@ -11,7 +11,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)
 ![Medusa](https://img.shields.io/badge/Medusa-v2-7c3aed)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
-![Registry](https://img.shields.io/badge/registry-GitHub%20Packages-181717?logo=github)
+![Registry](https://img.shields.io/badge/registry-npm-cb3837?logo=npm)
 
 ---
 
@@ -21,12 +21,6 @@ Production-grade bidirectional Odoo ERP ↔ MedusaJS v2 integration.
 
 ```bash
 pnpm add @bambiste/medusa-odoo
-```
-
-This package is published to **GitHub Packages**. Add to your `.npmrc`:
-
-```
-@bambiste:registry=https://npm.pkg.github.com/
 ```
 
 ## Usage
