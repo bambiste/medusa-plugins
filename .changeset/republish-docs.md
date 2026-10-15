@@ -5,7 +5,6 @@
 "@bambiste/medusa-qr": patch
 "@bambiste/medusa-social-commerce": patch
 "@bambiste/medusa-stories": patch
-"@bambiste/medusa-plugin-sample": patch
 ---
 
 The README install sections now reference the npm registry instead of GitHub Packages and omit the .npmrc step, and the medusa-barcode README shows the scoped package name for installation and imports along with a feature list.
