@@ -12,7 +12,7 @@ import type { ISocialCommerceService } from '../../../../modules/social-commerce
  *   { account_id: string }
  *
  * Response:
- *   { result: SyncVideosResult }   — { synced, created, updated }
+ *   { result: SyncVideosResult }    { synced, created, updated }
  */
 export async function POST(req: MedusaRequest, res: MedusaResponse) {
   try {

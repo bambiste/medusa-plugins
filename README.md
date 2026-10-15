@@ -21,7 +21,7 @@
 |---|---|
 | [`@bambiste/medusa-barcode`](./packages/medusa-barcode) | Barcode scanning, multi-provider lookup and automatic product creation |
 | [`@bambiste/medusa-odoo`](./packages/medusa-odoo) | Bidirectional Odoo ERP ↔ Medusa integration |
-| [`@bambiste/medusa-product-ext`](./packages/medusa-product-ext) | Product extensions — extra fields and media (videos) |
+| [`@bambiste/medusa-product-ext`](./packages/medusa-product-ext) | Product extensions, extra fields and media (videos) |
 | [`@bambiste/medusa-qr`](./packages/medusa-qr) | QR code generation |
 | [`@bambiste/medusa-social-commerce`](./packages/medusa-social-commerce) | TikTok social commerce + live selling |
 | [`@bambiste/medusa-stories`](./packages/medusa-stories) | Story / social feed |

@@ -8,10 +8,10 @@ import type { ISocialCommerceService } from '../../../../modules/social-commerce
  * Lists live-shopping sessions with optional filtering and pagination.
  *
  * Query params:
- *   account_id? — filter by social account id
- *   status?     — filter by session status ("live", "ended", "scheduled")
- *   limit?      — page size (default 20)
- *   offset?     — page offset (default 0)
+ *   account_id?, filter by social account id
+ *   status?      filter by session status ("live", "ended", "scheduled")
+ *   limit?       page size (default 20)
+ *   offset?      page offset (default 0)
  *
  * Response:
  *   { sessions: LiveSession[], count: number }

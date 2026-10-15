@@ -1,11 +1,11 @@
 /**
  * /admin/products/:product_id/extension
  *
- * GET  — fetch the extension record for a product (null if none exists yet)
- * POST — upsert the extension (create on first call, update thereafter)
+ * GET , fetch the extension record for a product (null if none exists yet)
+ * POST, upsert the extension (create on first call, update thereafter)
  *
  * Routes under src/api/admin/ are automatically protected by Medusa's admin
- * authentication middleware — no explicit authenticate() call needed.
+ * authentication middleware, no explicit authenticate() call needed.
  */
 import type { MedusaRequest, MedusaResponse } from '@medusajs/framework/http';
 import { PRODUCT_EXT_MODULE } from '../../../../../modules/product-ext/index';

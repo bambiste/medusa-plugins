@@ -135,7 +135,7 @@ class SocialCommerceService extends MedusaService({
     try {
       await this.tiktok.revokeToken(accessToken)
     } catch {
-      // Best-effort revocation — still mark inactive locally
+      // Best-effort revocation, still mark inactive locally
     }
     await this.updateSocialAccounts([{ id: accountId, is_active: false }])
   }

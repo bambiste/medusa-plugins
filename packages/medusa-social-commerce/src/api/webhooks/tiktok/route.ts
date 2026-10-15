@@ -36,7 +36,7 @@ export async function POST(req: MedusaRequest, res: MedusaResponse) {
   const clientSecret = process.env.TIKTOK_CLIENT_SECRET ?? ''
 
   // Prefer a pre-parsed rawBody buffer set by upstream middleware; fall back to
-  // re-serialising the parsed JSON body (best-effort — body-parser already
+  // re-serialising the parsed JSON body (best-effort, body-parser already
   // consumed the stream by the time this handler runs).
   const rawBody: string =
     typeof (req as any).rawBody === 'string'
@@ -126,7 +126,7 @@ export async function POST(req: MedusaRequest, res: MedusaResponse) {
       console.log('[TikTok Webhook] unhandled event:', eventName)
     }
   } catch (err: any) {
-    // Log but do not re-throw — response already sent
+    // Log but do not re-throw, response already sent
     console.error('[TikTok Webhook] handler error:', err?.message)
   }
 }

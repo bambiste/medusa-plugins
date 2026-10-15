@@ -32,7 +32,7 @@ redis.call('DEL', lock_key)
 return {1, 'OK'}
 `
 
-// Lua: Release reservation — decrement counter, delete reservation record.
+// Lua: Release reservation, decrement counter, delete reservation record.
 const RELEASE_SCRIPT = `
 local reserved_key = KEYS[1]
 local res_key      = KEYS[2]
@@ -50,7 +50,7 @@ redis.call('DEL', res_key)
 return {1, 'OK'}
 `
 
-// Lua: Confirm reservation (mark sold, decrement reserved, do NOT release stock — stock reduction is handled by Medusa inventory).
+// Lua: Confirm reservation (mark sold, decrement reserved, do NOT release stock, stock reduction is handled by Medusa inventory).
 const CONFIRM_SCRIPT = `
 local reserved_key = KEYS[1]
 local res_key      = KEYS[2]

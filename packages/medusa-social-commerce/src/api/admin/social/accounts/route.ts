@@ -8,10 +8,10 @@ import type { ISocialCommerceService } from "../../../../modules/social-commerce
  * Lists all connected social accounts with optional filtering and pagination.
  *
  * Query params:
- *   platform? — filter by platform (e.g. "tiktok")
- *   status?   — filter by status / is_active state
- *   limit?    — page size (default 20)
- *   offset?   — page offset (default 0)
+ *   platform?, filter by platform (e.g. "tiktok")
+ *   status?    filter by status / is_active state
+ *   limit?     page size (default 20)
+ *   offset?    page offset (default 0)
  *
  * Response:
  *   { accounts: SocialAccount[], count: number }

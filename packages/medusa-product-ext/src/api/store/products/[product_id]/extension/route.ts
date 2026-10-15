@@ -5,7 +5,7 @@
  * variant extensions in a single round-trip. No authentication required.
  *
  * Query params:
- *   variant_ids — comma-separated variant IDs to include in the response
+ *   variant_ids, comma-separated variant IDs to include in the response
  *                 (pass all variant IDs of the product for a complete payload)
  */
 import type { MedusaRequest, MedusaResponse } from '@medusajs/framework/http';
@@ -21,7 +21,7 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
     ? variantIdsParam.split(',').map((s) => s.trim()).filter(Boolean)
     : [];
 
-  // Parallel fetch — product ext + variant exts
+  // Parallel fetch, product ext + variant exts
   const [productExts, variantExts] = await Promise.all([
     service.listProductExtensions({ product_id }),
     variantIds.length

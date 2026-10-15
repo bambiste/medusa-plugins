@@ -8,11 +8,11 @@ import type { QrService } from '../modules/qr/services/qr-service'
 export default async function handleVariantCreated({ event, container }: SubscriberArgs<{ id: string }>) {
   const variantId = event.data.id
   try {
-    // Skip if QR records already exist for this variant (idempotency — don't override)
+    // Skip if QR records already exist for this variant (idempotency, don't override)
     const qrService = container.resolve<QrService>(QR_MODULE)
     const existing = await qrService.listByResource('variant', variantId)
     if (existing.length > 0) {
-      console.log('[medusa-qr] QR already exists for variant', variantId, '— skipping')
+      console.log('[medusa-qr] QR already exists for variant', variantId, ', skipping')
       return
     }
 
@@ -32,7 +32,7 @@ export default async function handleVariantCreated({ event, container }: Subscri
       ? variant.barcode
       : undefined
 
-    console.log('[medusa-qr] product-variant.created — generating codes for variant', variantId,
+    console.log('[medusa-qr] product-variant.created, generating codes for variant', variantId,
       existingEAN13 ? `(reusing EAN-13: ${existingEAN13})` : '(generating new EAN-13)')
 
     await generateQRWorkflow(container).run({

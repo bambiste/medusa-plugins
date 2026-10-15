@@ -13,7 +13,7 @@ function toTitleCase(s: string): string {
 function cleanText(s: string | undefined, maxLen = 500): string | undefined {
   if (!s) return undefined
   const clean = s.replace(/\s+/g, " ").trim()
-  return clean.length > maxLen ? clean.slice(0, maxLen) + "…" : clean
+  return clean.length > maxLen ? clean.slice(0, maxLen) + "..." : clean
 }
 
 // ─── Category slug normalisation ──────────────────────────────────────────────
@@ -118,11 +118,11 @@ function sanitizeMetaValue(v: unknown): string | number | boolean | null {
     const flat = v.map((item) =>
       typeof item === "object" && item !== null ? JSON.stringify(item) : String(item)
     ).join(", ")
-    return flat.length > 2_048 ? flat.slice(0, 2_048) + "…" : flat
+    return flat.length > 2_048 ? flat.slice(0, 2_048) + "..." : flat
   }
   // Plain object
   const json = JSON.stringify(v)
-  return json.length > 2_048 ? json.slice(0, 2_048) + "…" : json
+  return json.length > 2_048 ? json.slice(0, 2_048) + "..." : json
 }
 
 // ─── Deep merge metadata ──────────────────────────────────────────────────────

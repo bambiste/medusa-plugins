@@ -33,9 +33,9 @@ export default async function barcodeModuleLoader({ container }: LoaderContext) 
         console.info(`[medusa-barcode] Purged ${purged} expired cache entries on startup.`)
       }
     } catch {
-      // Non-fatal — DB might not be migrated yet on first run
+      // Non-fatal, DB might not be migrated yet on first run
     }
   } catch {
-    // Module not registered — skip
+    // Module not registered, skip
   }
 }

@@ -85,7 +85,7 @@ export async function POST(req: MedusaRequest, res: MedusaResponse) {
       })
     }
 
-    // Product was deleted — remove the stale mapping + cache and fall through to creation
+    // Product was deleted, remove the stale mapping + cache and fall through to creation
     await svc.removeBarcodeProduct(parsed.normalized).catch(() => {})
     await svc.invalidateCache(parsed.normalized).catch(() => {})
   }

@@ -21,7 +21,7 @@ const upsertProductExtStep = createStep(
 
     const existing = await service.listProductExtensions({ product_id: input.product_id });
 
-    // Cast service to any — MedusaService's generated types use `Record<string, unknown>`
+    // Cast service to any, MedusaService's generated types use `Record<string, unknown>`
     // for json columns but we store VideoItem[] which is an array, not a plain object.
     const svc = service as any;
     const videos = input.videos ?? [];

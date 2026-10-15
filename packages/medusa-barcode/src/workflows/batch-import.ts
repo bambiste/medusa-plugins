@@ -12,7 +12,7 @@ import type { BatchImportInput, BatchImportResult, CreateFromBarcodeResult } fro
  * Process all barcodes sequentially within a single step.
  *
  * Running the full lookup-and-create logic inside one step avoids the
- * Workflow SDK proxy limitation — array methods like .map() cannot be called
+ * Workflow SDK proxy limitation, array methods like .map() cannot be called
  * on workflow input objects at definition time.
  */
 const processBatchStep = createStep(

@@ -22,7 +22,7 @@ interface UpcItemDbItem {
 }
 
 interface UpcItemDbResponse {
-  code:   string           // "OK" | "INVALID_UPC" | "NOT_FOUND" …
+  code:   string           // "OK" | "INVALID_UPC" | "NOT_FOUND" ...
   total:  number
   items?: UpcItemDbItem[]
   message?: string
@@ -78,7 +78,7 @@ export class UpcItemDbProvider extends BaseBarcodeProvider {
     return this.withRetry(async () => {
       const res = await this.fetchWithTimeout(url, { headers })
 
-      // 429 = rate-limited on trial tier — surface as retriable error
+      // 429 = rate-limited on trial tier, surface as retriable error
       if (res.status === 429) {
         throw new Error("UpcItemDb rate limit exceeded")
       }

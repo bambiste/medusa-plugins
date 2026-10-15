@@ -5,7 +5,7 @@ import { signPayload } from './sign-payload';
 
 export interface CodePayload {
   payload: any;
-  code: string;       // nanoid — used as Code128 barcode value AND QR URL token
+  code: string;       // nanoid, used as Code128 barcode value AND QR URL token
   qr_code?: string;  // QR code image data URL
   code128?: string;  // Code128 image data URL
   ean13?: string;    // EAN-13 image data URL

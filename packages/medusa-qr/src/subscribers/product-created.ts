@@ -4,7 +4,7 @@ import { uploadFiles } from '../workflows/upload-file'
 
 export default async function handleProductCreated({ event, container }: SubscriberArgs<{ id: string }>) {
   try {
-    console.log('[medusa-qr] product.created — generating codes for', event.data.id)
+    console.log('[medusa-qr] product.created, generating codes for', event.data.id)
     await generateQRWorkflow(container).run({
       input: {
         input: {

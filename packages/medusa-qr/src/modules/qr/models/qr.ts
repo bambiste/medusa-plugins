@@ -3,7 +3,7 @@ import { model } from "@medusajs/framework/utils"
 export const Qr = model.define("qr", {
   id: model.id().primaryKey(),
 
-  /** nanoid — serves as both the Code128 barcode value and the QR URL token */
+  /** nanoid, serves as both the Code128 barcode value and the QR URL token */
   code: model.text().unique(),
 
   resource_type: model.text(),   // 'product' | 'variant'

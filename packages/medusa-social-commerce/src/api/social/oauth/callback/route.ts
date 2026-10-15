@@ -18,7 +18,7 @@ function popupHtml(payload: Record<string, unknown>): string {
   window.close();
 </script>
 <p style="font-family:sans-serif;text-align:center;margin-top:40px;color:#64748b">
-  ${isSuccess ? 'Account connected! Closing…' : 'Connection failed. Closing…'}
+  ${isSuccess ? 'Account connected! Closing...' : 'Connection failed. Closing...'}
 </p>
 </body></html>`
 }
@@ -95,7 +95,7 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
       ;[account] = await svc.createSocialAccounts([accountData])
     }
 
-    // Fire-and-forget — don't block popup close waiting for initial sync
+    // Fire-and-forget, don't block popup close waiting for initial sync
     accountConnectedWorkflow(req.scope)
       .run({ input: { accountId: account.id } })
       .catch((err: Error) => console.error('[TikTok OAuth] accountConnectedWorkflow failed:', err?.message))

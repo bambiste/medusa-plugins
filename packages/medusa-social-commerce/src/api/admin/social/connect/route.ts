@@ -8,7 +8,7 @@ import type { ISocialCommerceService } from '../../../../modules/social-commerce
  * Generates a TikTok OAuth authorisation URL for a given merchant.
  *
  * Body:
- *   { merchant_id?: string }   — defaults to "default"
+ *   { merchant_id?: string }    defaults to "default"
  *
  * Response:
  *   { url: string }

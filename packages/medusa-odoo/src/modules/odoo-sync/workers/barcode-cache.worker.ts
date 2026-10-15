@@ -1,10 +1,10 @@
 /**
- * barcode-cache worker — keeps the Redis barcode cache warm.
+ * barcode-cache worker, keeps the Redis barcode cache warm.
  *
  * Jobs arrive on queue 'barcode:cache' with payload:
- *   { type: 'warmAll' }         — rebuild entire cache (scheduled nightly)
- *   { type: 'invalidate', barcode, context? } — bust specific entry on product update
- *   { type: 'warmSingle', barcode } — resolve and cache a single barcode
+ *   { type: 'warmAll' }          rebuild entire cache (scheduled nightly)
+ *   { type: 'invalidate', barcode, context? }, bust specific entry on product update
+ *   { type: 'warmSingle', barcode }, resolve and cache a single barcode
  */
 import { Worker, Job } from 'bullmq'
 import { BarcodeResolver, type BarcodeContext } from '../barcode/barcode-resolver.js'

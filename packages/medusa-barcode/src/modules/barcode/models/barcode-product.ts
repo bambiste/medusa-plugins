@@ -6,7 +6,7 @@ import { model } from "@medusajs/framework/utils"
  */
 export const BarcodeProduct = model.define("barcode_product", {
   id:               model.id().primaryKey(),
-  /** The raw normalised barcode string (EAN-13, UPC-A, Code128 …) */
+  /** The raw normalised barcode string (EAN-13, UPC-A, Code128 ...) */
   barcode:          model.text().unique(),
   /** Medusa product.id */
   product_id:       model.text(),

@@ -29,7 +29,7 @@ export default async function socialEventsSubscriber({
     case 'social.live.ended': {
       const { sessionId } = data as { sessionId: string }
       const expired = await svc.expireSessionReservations(sessionId)
-      console.log(`[SocialCommerce] live ended: ${sessionId} — expired ${expired} reservation(s)`)
+      console.log(`[SocialCommerce] live ended: ${sessionId}, expired ${expired} reservation(s)`)
       break
     }
 

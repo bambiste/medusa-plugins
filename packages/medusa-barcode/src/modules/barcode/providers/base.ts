@@ -12,13 +12,13 @@ const delay = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, m
  * Abstract base for all barcode lookup providers.
  *
  * Concrete providers must implement:
- *   - `lookup(barcode)` — query the external API
- *   - `supports(barcodeType)` — return false to skip this provider for unsupported formats
+ *   - `lookup(barcode)`, query the external API
+ *   - `supports(barcodeType)`, return false to skip this provider for unsupported formats
  *
  * They get for free:
- *   - `fetchWithTimeout` — AbortController-wrapped fetch
- *   - `withRetry`        — exponential back-off retry loop
- *   - config merging     — enables/timeout/retries/priority
+ *   - `fetchWithTimeout`, AbortController-wrapped fetch
+ *   - `withRetry`         exponential back-off retry loop
+ *   - config merging      enables/timeout/retries/priority
  */
 export abstract class BaseBarcodeProvider {
   readonly providerId: string
@@ -47,7 +47,7 @@ export abstract class BaseBarcodeProvider {
 
   /**
    * Perform the external barcode lookup.
-   * Return `null` if the barcode is not found (not an error — just unknown).
+   * Return `null` if the barcode is not found (not an error, just unknown).
    * Throw for network / authentication failures.
    */
   abstract lookup(barcode: string): Promise<NormalizedProduct | null>
@@ -89,7 +89,7 @@ export abstract class BaseBarcodeProvider {
       } catch (err) {
         lastError = err
         if (attempt < this.config.retries) {
-          await delay(500 * Math.pow(2, attempt)) // 500 ms, 1 s, 2 s …
+          await delay(500 * Math.pow(2, attempt)) // 500 ms, 1 s, 2 s ...
         }
       }
     }

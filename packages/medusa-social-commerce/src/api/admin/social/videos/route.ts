@@ -10,11 +10,11 @@ import type { ISocialCommerceService } from '../../../../modules/social-commerce
  * addition to standard offset/limit.
  *
  * Query params:
- *   account_id? — filter by social account id
- *   status?     — filter by video status (e.g. "active", "archived")
- *   limit?      — page size (default 20)
- *   offset?     — numeric page offset (default 0)
- *   cursor?     — opaque cursor string (takes precedence over offset when provided)
+ *   account_id?, filter by social account id
+ *   status?      filter by video status (e.g. "active", "archived")
+ *   limit?       page size (default 20)
+ *   offset?      numeric page offset (default 0)
+ *   cursor?      opaque cursor string (takes precedence over offset when provided)
  *
  * Response:
  *   { videos: SocialVideo[], count: number }

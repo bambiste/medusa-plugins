@@ -1,8 +1,8 @@
 /**
  * /admin/products/:product_id/variants/:variant_id/extension
  *
- * GET  — fetch the extension record for a variant (null if none exists yet)
- * POST — upsert the extension (create on first call, update thereafter)
+ * GET , fetch the extension record for a variant (null if none exists yet)
+ * POST, upsert the extension (create on first call, update thereafter)
  */
 import type { MedusaRequest, MedusaResponse } from '@medusajs/framework/http';
 import { PRODUCT_EXT_MODULE } from '../../../../../../../modules/product-ext/index';

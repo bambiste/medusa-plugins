@@ -25,7 +25,7 @@ const LookupBarcodeSchema = z.object({
  *     "fromCache": false,
  *     "provider": "open-food-facts",
  *     "barcodeType": "ean13",
- *     "product": { title, description, brand, … }
+ *     "product": { title, description, brand, ... }
  *   }
  */
 export async function POST(req: MedusaRequest, res: MedusaResponse) {

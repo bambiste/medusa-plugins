@@ -65,7 +65,7 @@ function detectType(raw: string): BarcodeTypeValue {
   // DataMatrix: hexadecimal blocks or specific patterns
   if (/^[A-F0-9]{20,}$/i.test(trimmed)) return BARCODE_TYPES.DATAMATRIX
 
-  // Code128: alphanumeric / mixed — everything else
+  // Code128: alphanumeric / mixed, everything else
   return BARCODE_TYPES.CODE128
 }
 

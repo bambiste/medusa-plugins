@@ -21,7 +21,7 @@ export async function POST(req: MedusaRequest, res: MedusaResponse) {
   const queues: Record<string, Queue> = req.scope.resolve('erpQueues')
 
   // Route to appropriate queue for odoo → medusa handling
-  // (For now we log — full odoo→medusa would call Medusa Admin SDK)
+  // (For now we log, full odoo→medusa would call Medusa Admin SDK)
   console.log(`[medusa-odoo] Odoo webhook received: ${event}`, data?.id)
 
   res.json({ received: true, event })

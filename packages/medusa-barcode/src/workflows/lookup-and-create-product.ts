@@ -153,7 +153,7 @@ const createMedusaProductStep = createStep(
         prices?: Array<{ currency_code: string; amount: number }>
       }>): Promise<Array<{ id: string }>>
     }
-    // Cast through unknown — the Link service's create() signature is compatible at runtime.
+    // Cast through unknown, the Link service's create() signature is compatible at runtime.
     // Using Record<string, unknown> to allow the optional `data` field for join-table attributes.
     const remoteLink = container.resolve(ContainerRegistrationKeys.LINK) as unknown as {
       create(links: Array<Record<string, unknown>>): Promise<unknown>
@@ -177,7 +177,7 @@ const createMedusaProductStep = createStep(
           ? { upc: parsed.normalized, barcode: parsed.normalized }
           : { barcode: parsed.normalized }
 
-    // Prices are NOT passed to the Product Module — they live in the Pricing
+    // Prices are NOT passed to the Product Module, they live in the Pricing
     // Module and must be linked separately via the Remote Link.
     const variantPayload = {
       title:   "Default",
@@ -192,7 +192,7 @@ const createMedusaProductStep = createStep(
       } : {}),
     }
 
-    // sales_channels is NOT part of CreateProductDTO — handled separately via Remote Link below
+    // sales_channels is NOT part of CreateProductDTO, handled separately via Remote Link below
     const productPayload = {
       title:        normalized.title,
       description:  normalized.description ?? "",
@@ -250,7 +250,7 @@ const createMedusaProductStep = createStep(
     }
 
     // Create an inventory item and link it to the variant.
-    // productModule.createProducts() is the raw module call — unlike the REST API which runs
+    // productModule.createProducts() is the raw module call, unlike the REST API which runs
     // createProductsWorkflow (with createInventoryItemsStep), it never auto-creates inventory.
     if (variantId) {
       try {
@@ -271,7 +271,7 @@ const createMedusaProductStep = createStep(
           }])
         }
       } catch {
-        // Non-fatal — product still created; inventory item can be linked manually later
+        // Non-fatal, product still created; inventory item can be linked manually later
       }
     }
 
@@ -366,7 +366,7 @@ export const lookupAndCreateProductWorkflow = createWorkflow(
     const existing = checkExistingBarcodeProductStep({ barcode: input.barcode })
 
     // Note: WorkflowSDK does not support JS if/return inside the workflow fn
-    // directly — we handle the "existing" case in the API route instead by
+    // directly, we handle the "existing" case in the API route instead by
     // calling this workflow only when needed. The step still runs to surface
     // the data early and benefit from transaction safety.
 

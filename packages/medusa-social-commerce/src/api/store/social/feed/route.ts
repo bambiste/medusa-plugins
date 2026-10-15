@@ -6,9 +6,9 @@ import type { ISocialCommerceService } from '../../../../modules/social-commerce
  * GET /store/social/feed
  *
  * Query params:
- *   account_id? — filter by social account
- *   cursor?     — pagination cursor (opaque string)
- *   limit?      — page size, default 20, max 50
+ *   account_id?, filter by social account
+ *   cursor?      pagination cursor (opaque string)
+ *   limit?       page size, default 20, max 50
  */
 export async function GET(req: MedusaRequest, res: MedusaResponse) {
   try {

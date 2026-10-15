@@ -1,5 +1,5 @@
 /**
- * BarcodeResolver — core barcode lookup engine.
+ * BarcodeResolver, core barcode lookup engine.
  *
  * POS context:  barcode → Medusa variant (product catalog is the source of truth)
  * Warehouse ctx: barcode → Odoo product.product (ERP is the source of truth)

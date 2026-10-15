@@ -10,7 +10,7 @@ import type { BarcodeService }           from "../../../../modules/barcode/servi
  *
  * Response:
  *   {
- *     "barcodeProduct": { id, barcode, product_id, … } | null,
+ *     "barcodeProduct": { id, barcode, product_id, ... } | null,
  *     "cache":          { barcode, provider, normalized_data, expires_at } | null,
  *     "parsed":         { raw, normalized, type, isValid }
  *   }

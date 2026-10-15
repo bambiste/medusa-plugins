@@ -37,7 +37,7 @@ const validateSocialAccountStep = createStep<
     }
     const account = accounts[0]
 
-    // Scopes are stored on the account from the OAuth token exchange response —
+    // Scopes are stored on the account from the OAuth token exchange response, 
     // no need to call TikTok's token info endpoint (which doesn't exist in v2).
     const grantedScopes = (account.token_scope ?? '').split(/[\s,]+/).filter(Boolean)
     const missing = REQUIRED_SCOPES.filter(s => !grantedScopes.includes(s))

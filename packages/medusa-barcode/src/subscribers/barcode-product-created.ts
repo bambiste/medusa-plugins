@@ -34,7 +34,7 @@ export default async function barcodeProductCreatedSubscriber({
     `product_id=${product_id}, barcode=${barcode}, provider=${provider}`
   )
 
-  // Extend here — e.g. emit a webhook, create an inventory record, etc.
+  // Extend here, e.g. emit a webhook, create an inventory record, etc.
 }
 
 export const config = {

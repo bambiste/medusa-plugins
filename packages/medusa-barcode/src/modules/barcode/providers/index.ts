@@ -64,14 +64,14 @@ export class ProviderRegistry {
    * ready-to-use registry.
    *
    * Lookup order (by ascending priority):
-   *   10  OpenFoodFacts      — free, no key
-   *   20  OpenBeautyFacts    — free, no key
-   *   30  OpenPetFoodFacts   — free, no key
-   *   40  OpenProductsFacts  — free, no key
-   *   50  GoogleBooks        — free (quota raised with apiKey)
-   *   60  EanSearch          — rate-limited, requires apiKey (auto-disabled when absent)
-   *   70  BarcodeLookup      — rate-limited, requires apiKey (auto-disabled when absent)
-   *   80  UpcItemDb          — rate-limited / paid, tried last
+   *   10  OpenFoodFacts       free, no key
+   *   20  OpenBeautyFacts     free, no key
+   *   30  OpenPetFoodFacts    free, no key
+   *   40  OpenProductsFacts , free, no key
+   *   50  GoogleBooks         free (quota raised with apiKey)
+   *   60  EanSearch           rate-limited, requires apiKey (auto-disabled when absent)
+   *   70  BarcodeLookup       rate-limited, requires apiKey (auto-disabled when absent)
+   *   80  UpcItemDb           rate-limited / paid, tried last
    */
   static fromOptions(options: BarcodeModuleProviderOptions = {}): ProviderRegistry {
     const registry = new ProviderRegistry()

@@ -30,7 +30,7 @@ class QRService extends MedusaService({ Qr }) {
 
     const prepared = buildFilesUpload(data) as any as File[]
     if (!prepared.length) {
-      // Nothing to upload — save directly with data-URL values
+      // Nothing to upload, save directly with data-URL values
       return await this.createQrs({ ...data })
     }
 

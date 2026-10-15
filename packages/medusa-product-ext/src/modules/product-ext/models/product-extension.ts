@@ -8,7 +8,7 @@ export const ProductExtension = model.define('product_extension', {
   id:         model.id().primaryKey(),
   product_id: model.text().unique(),
 
-  /** Uploaded video items — each has a public S3 URL, original filename, and MIME type. */
+  /** Uploaded video items, each has a public S3 URL, original filename, and MIME type. */
   videos: model.json(),
 
   /** Optional short promotional text shown below the product title. */

@@ -6,7 +6,7 @@
 
 # @bambiste/medusa-product-ext
 
-**Product extension plugin — extra fields and media (videos) beyond Medusa's core product model.**
+**Product extension plugin, extra fields and media (videos) beyond Medusa's core product model.**
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)
 ![Medusa](https://img.shields.io/badge/Medusa-v2-7c3aed)
@@ -15,7 +15,7 @@
 
 ---
 
-Product extension plugin — extra fields and media (videos) beyond Medusa's core product model.
+Product extension plugin, extra fields and media (videos) beyond Medusa's core product model.
 
 ## Installation
 

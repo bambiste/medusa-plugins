@@ -50,12 +50,12 @@ export async function DELETE(req: MedusaRequest, res: MedusaResponse) {
       return res.status(404).json({ message: `Social account not found: ${id}` })
     }
 
-    // Best-effort token revocation — fire and forget, never fail the request
+    // Best-effort token revocation, fire and forget, never fail the request
     try {
       const accessToken = svc.decryptToken(account.encrypted_access_token)
       await svc.tiktokApi.revokeToken(accessToken)
     } catch {
-      // Intentionally swallowed — revocation is non-critical
+      // Intentionally swallowed, revocation is non-critical
     }
 
     await svc.deleteSocialAccounts([id])

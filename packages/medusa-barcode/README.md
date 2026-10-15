@@ -55,11 +55,11 @@ export default defineConfig({
     {
       resolve: "./src/modules/barcode",
       options: {
-        // NOTE: "providers" is reserved by Medusa's module loader — use "providerConfig"
+        // NOTE: "providers" is reserved by Medusa's module loader, use "providerConfig"
         providerConfig: {
           openFoodFacts: {
             enabled: true,
-            country: "world",   // subdomain: world | fr | de | es …
+            country: "world",   // subdomain: world | fr | de | es ...
             timeout: 12000,
             retries: 2,
             priority: 10,       // lower = higher priority in fallback chain
@@ -73,7 +73,7 @@ export default defineConfig({
           },
         },
         cache: {
-          ttl: 86400,   // seconds — 24 h default
+          ttl: 86400,   // seconds, 24 h default
         },
       },
     },
@@ -104,7 +104,7 @@ Lookup a barcode via cache → providers.
     "title": "Nutella",
     "brand": "Ferrero",
     "category": "Spreads",
-    "image": "https://images.openfoodfacts.org/…/front.jpg",
+    "image": "https://images.openfoodfacts.org/.../front.jpg",
     "weight": "400g",
     "barcode": "3017620422003"
   }
@@ -256,8 +256,8 @@ export default async function({ container }) {
 | UPC-A | `012000161155` | GS1 checksum |
 | UPC-E | `01210501` | Expands + validates |
 | Code128 | `LOT-2024-ABC` | Length ≥ 1 |
-| QR | `https://…` | Any URL |
-| DataMatrix | `A3F9BC00…` | Hex pattern |
+| QR | `https://...` | Any URL |
+| DataMatrix | `A3F9BC00...` | Hex pattern |
 
 ---
 

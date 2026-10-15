@@ -1,7 +1,7 @@
 {
   "name": "@bambiste/medusa-product-ext",
   "version": "0.0.2",
-  "description": "Product extension plugin — extra fields and media (videos) not covered by Medusa's core product model.",
+  "description": "Product extension plugin, extra fields and media (videos) not covered by Medusa's core product model.",
   "author": "Leuzman",
   "license": "MIT",
   "repository": {
