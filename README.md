@@ -25,7 +25,6 @@
 | [`@bambiste/medusa-qr`](./packages/medusa-qr) | QR code generation |
 | [`@bambiste/medusa-social-commerce`](./packages/medusa-social-commerce) | TikTok social commerce + live selling |
 | [`@bambiste/medusa-stories`](./packages/medusa-stories) | Story / social feed |
-| [`@bambiste/medusa-plugin-sample`](./packages/medusa-plugin-sample) | Starter / sample plugin |
 
 ## Installing a plugin
 
