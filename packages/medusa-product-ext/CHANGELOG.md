@@ -1,5 +1,11 @@
 # @bambiste/medusa-product-ext
 
+## 0.0.3
+
+### Patch Changes
+
+- 48b9be1: The README install sections now reference the npm registry instead of GitHub Packages and omit the .npmrc step, and the medusa-barcode README shows the scoped package name for installation and imports along with a feature list.
+
 ## 0.0.2
 
 ### Patch Changes
