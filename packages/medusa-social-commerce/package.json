@@ -35,15 +35,15 @@
     "prepublishOnly": "medusa plugin:build"
   },
   "dependencies": {
-    "ioredis": "^5.3.2"
+    "ioredis": "^5.11.1"
   },
   "devDependencies": {
     "@medusajs/admin-sdk": "2.14.2",
     "@medusajs/cli": "2.14.2",
     "@medusajs/framework": "2.14.2",
     "@medusajs/medusa": "2.14.2",
-    "@types/node": "^20.0.0",
-    "typescript": "^5.3.3"
+    "@types/node": "^20.19.43",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@medusajs/admin-sdk": "2.14.2",

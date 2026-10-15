@@ -40,8 +40,8 @@
     "@medusajs/cli": "2.14.2",
     "@medusajs/framework": "2.14.2",
     "@medusajs/medusa": "2.14.2",
-    "@types/node": "^20.0.0",
-    "typescript": "^5.6.2"
+    "@types/node": "^20.19.43",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@medusajs/cli": "2.14.2",
